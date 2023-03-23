@@ -1,0 +1,25 @@
+[package]
+name = "liftoff"
+version = "0.0.0"
+description = "Quick launch your Deta Space apps"
+authors = ["Aarush Thukral"]
+license = "MIT"
+repository = ""
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1.2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.2", features = ["fs-create-dir", "fs-read-dir", "fs-read-file", "fs-write-file", "macos-private-api", "path-all", "shell-open", "system-tray"] }
+tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
+
+
+[features]
+# this feature is used for production builds or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]

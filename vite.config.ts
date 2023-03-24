@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
-import topLevelAwait from "vite-plugin-top-level-await";
 
 const mobile = process.env.TAURI_PLATFORM === "android" || process.env.TAURI_PLATFORM === "ios";
 
@@ -15,7 +14,6 @@ export default defineConfig(async () => ({
         }),
       ],
     }),
-    topLevelAwait(),
   ],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`

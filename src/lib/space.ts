@@ -43,8 +43,6 @@ export async function makeRequest<T>(
     throw new Error(`Request failed with status ${res.status}: ${res.statusText}`);
   }
 
-  console.log(res);
-
   return res.json();
 }
 
